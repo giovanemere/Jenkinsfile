@@ -20,12 +20,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage ('Jfrog'){
             steps {
-                scritp {
-                echo 'Deploying....'
-
-                // Upload Artifactory
+              script {
+                    
+                 // Upload Artifactory
                  rtUpload (  serverId: JfrogServerID,
                             spec: '''{ "files": [ {
                                             "pattern": "FreeStyle.tar",
@@ -35,7 +34,7 @@ pipeline {
                                 ]
                             }'''
                         )
-                }
+              }
             }
         }
     }
