@@ -9,7 +9,7 @@ pipeline {
                 //#Ejecuci[on de Compress de carpeta del artefacto final tipo zip
 
                 
-                sh ('tar -C /var/jenkins_home/workspace/FREESTILE -cvf FreeStyle.zip')
+                sh ('tar -cvf FreeStyle.zip /var/jenkins_home/workspace/FREESTILE/')
                 sh ('find /var/jenkins_home/workspace/FREESTILE/ -name FreeStyle.tar ')
 
                 // Upload Artifactory
