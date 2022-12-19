@@ -4,20 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                script {
+                    echo 'Building..'
 
-                //#Ejecuci[on de Compress de carpeta del artefacto final tipo zip
+                    //#Ejecuci[on de Compress de carpeta del artefacto final tipo zip
 
-                
-                sh ('tar -cvf FreeStyle.zip /var/jenkins_home/workspace/FREESTILE/')
-                sh ('find $workspace -name FreeStyle.tar ')
-                echo "workspace: $workspace"
+                    
+                    sh ('tar -cvf FreeStyle.zip /var/jenkins_home/workspace/FREESTILE/')
+                    sh ('find $workspace -name FreeStyle.tar ')
+                    echo "workspace: $workspace"
+                }
 
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
             }
         }
         stage ('Jfrog'){
