@@ -7,8 +7,10 @@ pipeline {
                 echo 'Building..'
 
                 //#Ejecuci[on de Compress de carpeta del artefacto final tipo zip
-                sh ('/bin/zip -r "FreeStyle.zip" "/var/jenkins_home/workspace/FREESTILE"')
-                sh ('find /var/jenkins_home/workspace/FREESTILE/ -name "FreeStyle.zip" ')
+
+                
+                sh ('/bin/tar -C "/var/jenkins_home/workspace/FREESTILE" -cvf  "FreeStyle.zip")
+                sh ('find /var/jenkins_home/workspace/FREESTILE/ -name "FreeStyle.tar" ')
 
                 // Upload Artifactory
                  rtUpload (  serverId: JfrogServerID,
