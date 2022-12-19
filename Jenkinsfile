@@ -23,7 +23,8 @@ pipeline {
         stage ('Jfrog'){
             steps {
               script {
-                    
+                
+                echo "pruebas "
                  // Upload Artifactory
                  rtUpload (  serverId: JfrogServerID,
                             spec: '''{ "files": [ {
