@@ -10,7 +10,8 @@ pipeline {
 
                 
                 sh ('tar -cvf FreeStyle.zip /var/jenkins_home/workspace/FREESTILE/')
-                sh ('find /var/jenkins_home/workspace/FREESTILE/ -name FreeStyle.tar ')
+                sh ('find $workspace -name FreeStyle.tar ')
+                echo "workspace: $workspace"
 
                 // Upload Artifactory
                  rtUpload (  serverId: JfrogServerID,
