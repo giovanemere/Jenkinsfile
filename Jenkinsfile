@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                scritps {
+                scritp {
                 echo 'Deploying....'
 
                 // Upload Artifactory
