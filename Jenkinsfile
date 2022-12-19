@@ -13,6 +13,18 @@ pipeline {
                 sh ('find $workspace -name FreeStyle.tar ')
                 echo "workspace: $workspace"
 
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                scritps {
+                echo 'Deploying....'
+
                 // Upload Artifactory
                  rtUpload (  serverId: JfrogServerID,
                             spec: '''{ "files": [ {
@@ -23,16 +35,7 @@ pipeline {
                                 ]
                             }'''
                         )
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                }
             }
         }
     }
