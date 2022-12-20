@@ -22,6 +22,8 @@ pipeline {
               script {
                 
                 echo "pruebas "
+                env.FileArtifact = "${workspace}/pruebas"
+
                  // Upload Artifactory
                  rtUpload ( serverId: serverjfrog,
                             spec: '''{ "files": [ {
