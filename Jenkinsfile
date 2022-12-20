@@ -10,7 +10,7 @@ pipeline {
                     //#Ejecuci[on de Compress de carpeta del artefacto final tipo zip
 
                     
-                    sh ('tar -cvf FreeStyle.zip /var/jenkins_home/workspace/FREESTILE/')
+                    sh ('tar -cvf FreeStyle.tar /var/jenkins_home/workspace/FREESTILE/')
                     sh ('find $workspace -name FreeStyle.tar ')
                     echo "workspace: $workspace"
                 }
@@ -22,7 +22,7 @@ pipeline {
               script {
                 
                 echo "pruebas "
-                env.FileArtifact = "${workspace}/pruebas"
+                env.FileArtifact = "${workspace}/FreeStyle.tar"
                 env.JfrogServerID = "serverjfrog" 
                  // Upload Artifactory
                  rtUpload ( serverId: JfrogServerID,
