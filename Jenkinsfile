@@ -27,8 +27,8 @@ pipeline {
                  // Upload Artifactory
                  rtUpload ( serverId: JfrogServerID,
                             spec: '''{ "files": [ {
-                                            "pattern": "FreeStyle.tar",
-                                            "target": "CursoIAC/QA/",
+                                            "pattern": "CursoIAC/QA/FreeStyle.tar",
+                                            "target": "FreeStyle.tar",
                                             "recursive": "false"
                                     }
                                 ]
