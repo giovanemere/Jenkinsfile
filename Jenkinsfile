@@ -23,9 +23,9 @@ pipeline {
                 
                 echo "pruebas "
                 env.FileArtifact = "${workspace}/pruebas"
-                env.serverjfrog = "serverjfrog" 
+                env.JfrogServerID = "serverjfrog" 
                  // Upload Artifactory
-                 rtUpload ( serverId: serverjfrog,
+                 rtUpload ( serverId: JfrogServerID,
                             spec: '''{ "files": [ {
                                             "pattern": "$workspace/FreeStyle.tar",
                                             "target": "CursoIAC/QA/",
